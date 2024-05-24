@@ -47,7 +47,7 @@ function createStore(initialState) {
     // subscribe method to add listeners
     subscribe: (listener) => {
       listeners.push(listener);
-      // Return an unsubscribe function
+      // Return and unsubscribe function
       return () => {
         listeners = listeners.filter((l) => l !== listener);
       };
@@ -55,7 +55,7 @@ function createStore(initialState) {
   };
 }
 
-// Example usage:
+//Establishes a store for managing the application state, starting with the provided initial state that it takes as a parameter
 const store = createStore(initialState);
 
 store.subscribe(() => {
