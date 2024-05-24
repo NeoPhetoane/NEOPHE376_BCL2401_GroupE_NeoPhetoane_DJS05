@@ -36,6 +36,8 @@ function createStore(initialState) {
         default:
           break;
       }
+      // Notify any listeners of the change in state
+  listeners.forEach(listener => listener());
     },
   };
 }
